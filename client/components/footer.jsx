@@ -10,6 +10,8 @@ const BottomMenu = styled.section`
   text-align: center;
   font-size: 16px;
   font-weight: 300;
+  border-top: 2px solid grey;
+
 `
 
 const Footer = (props) => {

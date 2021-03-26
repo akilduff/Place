@@ -9,7 +9,7 @@ const Options = styled.section`
   grid-Template-Columns: repeat(4, minmax(0, 1fr));
   column-gap: 1em;
   width: auto;
-  margin: 1% 10% 1% 10%;
+  margin: 1% 10% 6% 10%;
   text-align: center;
   font-size: 24px;
   font-weight: 900;

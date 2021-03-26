@@ -2,6 +2,10 @@
 node_modules/
 jspm_packages/
 
+# Images
+Mockups/
+/client/Mockups
+
 # Bundled distribution
 /dist/bundle.js
 

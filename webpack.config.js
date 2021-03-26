@@ -11,6 +11,18 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         options: { presets: ["@babel/preset-env", "@babel/preset-react"] }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './images/[name].[ext]',
+              publicPath: '/'
+            }
+          },
+        ],
       }
     ]
   },

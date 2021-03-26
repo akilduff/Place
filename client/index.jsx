@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import styled from 'styled-components';
 
-class App extends React.Component {
+import Header from './components/header.jsx'
+import Footer from './components/footer.jsx'
+import Landing from './components/landing.jsx'
+
+class Place extends React.Component {
   constructor(props) {
     super (props);
     this.state = {
@@ -18,11 +23,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        Hello World
-      </div>
+      <>
+        <Header/>
+        <Landing/>
+        <Footer/>
+      </>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<Place />, document.getElementById('app'))

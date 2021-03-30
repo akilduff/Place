@@ -5,12 +5,13 @@ const port = 3000;
 
 app.use(express.json());
 
-app.use('/', express.static(path.join(__dirname, '../dist')))
+app.use(express.static(path.join(__dirname, '../dist')))
+// app.use('/about', express.static(path.join(__dirname, '../dist')))
 
-app.post('/', (req, res) => {
-  console.log('Incoming info to server: ', req.body);
-  res.send('Post request recevied');
-  res.end();
+app.get('/:view', (req, res) => {
+  let newView = req.params.view;
+  res.send(newView)
+  res.end()
 })
 
 app.listen(port, () => {

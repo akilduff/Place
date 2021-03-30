@@ -1,5 +1,9 @@
 import React from 'react';
+import { Route, NavLink, HashRouter } from "react-router-dom";
 import styled from 'styled-components';
+
+import Home from './home.jsx'
+import About from './about.jsx'
 
 const BottomMenu = styled.section`
   display: grid;
@@ -14,20 +18,26 @@ const BottomMenu = styled.section`
 
 `
 
-const Footer = (props) => {
+const NavBar = (props) => {
   return (
+    <HashRouter>
+      <div>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+      </div>
     <>
       <BottomMenu>
-        <a onClick={props.handleView} id='about'>about us</a>
-        <a href="/about">test</a>
+        <span><NavLink to='/about'>about us</NavLink></span>
+        <span>locations</span>
         <span>memberships</span>
-        <a href="/">Home</a>
+        <span><NavLink to='/'>Home</NavLink></span>
         <span>your place</span>
         <span>inbox</span>
         <span>profile</span>
       </BottomMenu>
     </>
+    </HashRouter>
   );
 }
 
-export default Footer;
+export default NavBar;

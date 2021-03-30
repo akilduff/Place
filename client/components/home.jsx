@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Route, NavLink, HashRouter } from "react-router-dom";
+
 import focus from '../../Mockups/focus.jpeg';
 import gather from '../../Mockups/gather.jpeg';
 import checkIn from '../../Mockups/check-in.jpeg';
@@ -8,6 +10,13 @@ import leftArrow from '../../Mockups/left-arrow.png';
 import rightArrow from '../../Mockups/right-arrow.png';
 import downArrow from '../../Mockups/down-arrow.png';
 
+const Title = styled.section`
+  width: 100%;
+  margin: 4em 0 1em 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+`
 
 const Options = styled.section`
   display: grid;
@@ -20,11 +29,10 @@ const Options = styled.section`
   font-weight: 900;
 `
 
-const Selection = styled.section`
-  display: grid;
+const Selection = styled(Options)`
   grid-Template-Columns: repeat(1, minmax(0, 1fr));
   grid-Template-Rows: repeat(2, minmax(0, auto));
-  text-align: center;
+  margin: 0;
   vertical-align: middle;
 `
 
@@ -38,12 +46,13 @@ const Icons = styled.img`
   vertical-align: middle;
 `
 
-const Landing = (props) => {
+const Home = (props) => {
   return (
     <>
+      <Title>I NEED A PLACE TO</Title>
       <Options>
         <Selection>
-          <span>*White box for the time being. Image to be provided later*</span>
+          <ScaledImage src={focus}/>
           <div>
             <Icons src={leftArrow}/> CONNECT
           </div>
@@ -71,4 +80,4 @@ const Landing = (props) => {
   );
 }
 
-export default Landing;
+export default Home;

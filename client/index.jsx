@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, NavLink, HashRouter } from "react-router-dom";
 import axios from 'axios';
 import styled from 'styled-components';
 
-import Header from './components/header.jsx'
-import Footer from './components/footer.jsx'
-import Landing from './components/landing.jsx'
-import About from './components/about.jsx'
+import NavBar from './components/navbar.jsx'
 
 class Place extends React.Component {
   constructor(props) {
@@ -31,22 +29,11 @@ class Place extends React.Component {
   }
 
   render() {
-    if (this.state.view === 'home') {
-      return (
-        <>
-          <Header/>
-          <Landing/>
-          <Footer handleView={this.handleView}/>
-        </>
-      )
-    } else if (this.state.view === 'about') {
-      return (
-        <>
-          <About/>
-          <Footer handleView={this.handleView}/>
-        </>
-      )
-    }
+    return (
+      <>
+        <NavBar/>
+      </>
+    )
   }
 }
 

@@ -18,8 +18,8 @@ const Footer = (props) => {
   return (
     <>
       <BottomMenu>
-        <a href='/about' onClick={props.handleView} id='about'>about us</a>
-        <a href="/about">about test</a>
+        <a onClick={props.handleView} id='about'>about us</a>
+        <a href="/about">test</a>
         <span>memberships</span>
         <a href="/">Home</a>
         <span>your place</span>

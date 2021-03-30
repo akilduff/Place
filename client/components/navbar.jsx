@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Home from './home.jsx'
 import About from './about.jsx'
+import Connect from './connect.jsx'
 
 const BottomMenu = styled.section`
   display: grid;
@@ -24,6 +25,7 @@ const NavBar = (props) => {
       <div>
         <Route exact path="/" component={Home}/>
         <Route path="/about" component={About}/>
+        <Route path="/connect" component={Connect}/>
       </div>
     <>
       <BottomMenu>

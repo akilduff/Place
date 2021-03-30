@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Route, NavLink, HashRouter } from "react-router-dom";
 
+import Connect from './connect.jsx'
+
 import focus from '../../Mockups/focus.jpeg';
 import gather from '../../Mockups/gather.jpeg';
 import checkIn from '../../Mockups/check-in.jpeg';
@@ -46,16 +48,22 @@ const Icons = styled.img`
   vertical-align: middle;
 `
 
-const Home = (props) => {
+const HomeTest = (props) => {
   return (
     <>
+    <HashRouter>
+      <div>
+        <Route path={`/:topicID`} component={Connect}/>
+      </div>
       <Title>I NEED A PLACE TO</Title>
       <Options>
         <Selection>
+          <NavLink to='connect'>
           <ScaledImage src={focus}/>
           <div>
             <Icons src={leftArrow}/> CONNECT
           </div>
+          </NavLink>
         </Selection>
         <Selection>
           <ScaledImage src={focus}/>
@@ -76,8 +84,9 @@ const Home = (props) => {
           </div>
         </Selection>
       </Options>
+      </HashRouter>
     </>
   );
 }
 
-export default Home;
+export default HomeTest;

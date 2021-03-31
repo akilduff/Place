@@ -12,8 +12,6 @@ class Place extends React.Component {
     this.state = {
       places: ['connect', 'focus', 'checkin', 'gather']
     };
-
-    this.handleView = this.handleView.bind(this);
   }
 
   componentDidMount() {

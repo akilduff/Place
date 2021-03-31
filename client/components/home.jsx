@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Route, NavLink, HashRouter } from "react-router-dom";
 
-import Connect from './connect.jsx'
+import Action from './action.jsx'
 
 import focus from '../../Mockups/focus.jpeg';
 import gather from '../../Mockups/gather.jpeg';
@@ -48,12 +48,14 @@ const Icons = styled.img`
   vertical-align: middle;
 `
 
-const HomeTest = (props) => {
+const Home = (props) => {
   return (
     <>
     <HashRouter>
       <div>
-        <Route path={`/:topicID`} component={Connect}/>
+        <Route path={`/:action`}>
+          <Action/>
+        </Route>
       </div>
       <Title>I NEED A PLACE TO</Title>
       <Options>
@@ -66,22 +68,28 @@ const HomeTest = (props) => {
           </NavLink>
         </Selection>
         <Selection>
+          <NavLink to='focus'>
           <ScaledImage src={focus}/>
           <div>
             <Icons src={upArrow}/> FOCUS
           </div>
+          </NavLink>
         </Selection>
         <Selection>
+          <NavLink to='check-in'>
           <ScaledImage src={checkIn}/>
           <div>
             <Icons src={downArrow}/> CHECK-IN
           </div>
+          </NavLink>
         </Selection>
         <Selection>
+          <NavLink to='gather'>
           <ScaledImage src={gather}/>
           <div>
             <Icons src={rightArrow}/> GATHER
           </div>
+          </NavLink>
         </Selection>
       </Options>
       </HashRouter>
@@ -89,4 +97,4 @@ const HomeTest = (props) => {
   );
 }
 
-export default HomeTest;
+export default Home;

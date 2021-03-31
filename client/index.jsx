@@ -10,28 +10,28 @@ class Place extends React.Component {
   constructor(props) {
     super (props);
     this.state = {
-      view: 'home'
+      places: ['connect', 'focus', 'check-in', 'gather']
     };
 
     this.handleView = this.handleView.bind(this);
   }
 
   componentDidMount() {
-    console.log('Current View: ', this.props.view)
+    // console.log('Current View: ', this.props.places)
   }
 
   handleView(e) {
-    let wantedView = e.target.id;
-    this.setState({
-      view: wantedView
-    })
-    e.preventDefault();
+    // let wantedView = e.target.id;
+    // this.setState({
+    //   view: wantedView
+    // })
+    // e.preventDefault();
   }
 
   render() {
     return (
       <>
-        <NavBar/>
+        <NavBar places={this.state.places}/>
       </>
     )
   }

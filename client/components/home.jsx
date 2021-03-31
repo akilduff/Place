@@ -6,7 +6,7 @@ import Action from './action.jsx'
 
 import focus from '../../Mockups/focus.jpeg';
 import focusArrow from '../../Mockups/focusArrow.png';
-import connect from '../../Mockups/connect.jpeg'; // this is temporary
+import connect from '../../Mockups/connect.jpeg'; // updated image needed
 import connectArrow from '../../Mockups/connectArrow.png';
 import gather from '../../Mockups/gather.jpeg';
 import gatherArrow from '../../Mockups/gatherArrow.png';
@@ -31,7 +31,6 @@ const Options = styled.section`
   font-size: 24px;
   font-weight: 900;
 `
-
 const Selection = styled(Options)`
   grid-Template-Columns: repeat(1, minmax(0, 1fr));
   grid-Template-Rows: repeat(2, minmax(0, auto));
@@ -50,11 +49,8 @@ const Icons = styled.img`
 `
 
 const Home = (props) => {
-
-  let optionsGrid = {
-    'gridTemplateColumns': `repeat(${props.places.length}, minmax(0, 1fr))`
-  }
-
+  let numPlaces = props.places.length;
+  let optionsGrid = {'gridTemplateColumns': `repeat(${numPlaces}, minmax(0, 1fr))`};
   return (
     <HashRouter>
       <div>

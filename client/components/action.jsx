@@ -18,7 +18,6 @@ const AboutGraph = styled.div`
 
 const Action = (props) => {
   let { action } = useParams();
-
   if (props.places.indexOf(action) > -1) {
     return (
       <>
@@ -32,8 +31,7 @@ const Action = (props) => {
     )
   } else {
     return(
-      <>
-      </>
+      <></>
     );
   }
 }

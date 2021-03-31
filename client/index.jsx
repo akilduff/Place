@@ -20,14 +20,6 @@ class Place extends React.Component {
     // console.log('Current View: ', this.props.places)
   }
 
-  handleView(e) {
-    // let wantedView = e.target.id;
-    // this.setState({
-    //   view: wantedView
-    // })
-
-  }
-
   render() {
     return (
       <>

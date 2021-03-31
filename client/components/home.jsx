@@ -5,12 +5,13 @@ import { Route, NavLink, HashRouter } from "react-router-dom";
 import Action from './action.jsx'
 
 import focus from '../../Mockups/focus.jpeg';
+import focusArrow from '../../Mockups/focusArrow.png';
+import connect from '../../Mockups/connect.jpeg'; // this is temporary
+import connectArrow from '../../Mockups/connectArrow.png';
 import gather from '../../Mockups/gather.jpeg';
-import checkIn from '../../Mockups/check-in.jpeg';
-import upArrow from '../../Mockups/up-arrow.png';
-import leftArrow from '../../Mockups/left-arrow.png';
-import rightArrow from '../../Mockups/right-arrow.png';
-import downArrow from '../../Mockups/down-arrow.png';
+import gatherArrow from '../../Mockups/gatherArrow.png';
+import checkin from '../../Mockups/checkin.jpeg';
+import checkinArrow from '../../Mockups/checkinArrow.png';
 
 const Title = styled.section`
   width: 100%;
@@ -49,51 +50,29 @@ const Icons = styled.img`
 `
 
 const Home = (props) => {
+
+  let optionsGrid = {
+    'gridTemplateColumns': `repeat(${props.places.length}, minmax(0, 1fr))`
+  }
+
   return (
-    <>
     <HashRouter>
       <div>
         <Route path={`/:action`}>
-          <Action/>
         </Route>
       </div>
       <Title>I NEED A PLACE TO</Title>
-      <Options>
+      <Options style={optionsGrid}>{props.places.map((place) => (
         <Selection>
-          <NavLink to='connect'>
-          <ScaledImage src={focus}/>
+          <NavLink to={`${place}`}>
+          <ScaledImage src={`/./images/${place}.jpeg`}/>
           <div>
-            <Icons src={leftArrow}/> CONNECT
+            <Icons src={`/./images/${place}Arrow.png`}/> {place}
           </div>
           </NavLink>
         </Selection>
-        <Selection>
-          <NavLink to='focus'>
-          <ScaledImage src={focus}/>
-          <div>
-            <Icons src={upArrow}/> FOCUS
-          </div>
-          </NavLink>
-        </Selection>
-        <Selection>
-          <NavLink to='check-in'>
-          <ScaledImage src={checkIn}/>
-          <div>
-            <Icons src={downArrow}/> CHECK-IN
-          </div>
-          </NavLink>
-        </Selection>
-        <Selection>
-          <NavLink to='gather'>
-          <ScaledImage src={gather}/>
-          <div>
-            <Icons src={rightArrow}/> GATHER
-          </div>
-          </NavLink>
-        </Selection>
-      </Options>
-      </HashRouter>
-    </>
+      ))}</Options>
+    </HashRouter>
   );
 }
 

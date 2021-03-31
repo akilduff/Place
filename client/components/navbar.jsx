@@ -22,9 +22,9 @@ const NavBar = (props) => {
   return (
     <HashRouter>
       <div>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/about" component={About}/>
-        <Route path="/:action" component={Action}/>
+        <Route exact path="/" render={() => <Home places={props.places}/>}/>
+        <Route path="/about" component={About}/>
+        <Route path="/:action" render={() => <Action places={props.places}/>}/>
       </div>
     <>
       <BottomMenu>

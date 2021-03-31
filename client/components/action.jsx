@@ -17,10 +17,9 @@ const AboutGraph = styled.div`
 `
 
 const Action = (props) => {
-
   let { action } = useParams();
-  let actionOptions = ['connect', 'focus', 'check-in', 'gather']
-  if (actionOptions.indexOf(action) > -1) {
+
+  if (props.places.indexOf(action) > -1) {
     return (
       <>
         <AboutTitle>Hello {action}</AboutTitle>

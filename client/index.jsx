@@ -10,7 +10,7 @@ class Place extends React.Component {
   constructor(props) {
     super (props);
     this.state = {
-      places: ['connect', 'focus', 'check-in', 'gather']
+      places: ['connect', 'focus', 'checkin', 'gather']
     };
 
     this.handleView = this.handleView.bind(this);
@@ -25,7 +25,7 @@ class Place extends React.Component {
     // this.setState({
     //   view: wantedView
     // })
-    // e.preventDefault();
+
   }
 
   render() {
